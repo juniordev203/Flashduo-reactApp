@@ -1,7 +1,9 @@
-import { SplashScreen, Stack } from "expo-router";
+import { Stack } from "expo-router";
 import "./global.css"
 import { useFonts } from "expo-font"
 import { useEffect } from "react";
+import * as SplashScreen from "expo-splash-screen";
+
 export default function RootLayout() {
   const [fontLoaded] = useFonts({
     "BeVietnamPro-Bold": require('../assets/fonts/BeVietnamPro-Bold.ttf'),
@@ -13,13 +15,13 @@ export default function RootLayout() {
   })
 
   useEffect(() => {
-    if (!fontLoaded) {
+    if (fontLoaded) {
       SplashScreen.hideAsync();
     }
   }, [fontLoaded]);
   if (!fontLoaded) {
     return null;
   }
-  return <Stack />;
+  return <Stack screenOptions={{ headerShown: false }}/>;
 }
 
