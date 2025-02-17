@@ -19,7 +19,7 @@ const TabIcon = ({
     <Text
       className={`${
         focused
-          ? "text-blue-600 font-bold text-xs"
+          ? "text-blue font-bold text-xs"
           : "text-gray-600"
       } text-xs w-full text-center mt-1`}
     >
