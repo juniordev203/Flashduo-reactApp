@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Explore = () => {
+const AuthNavigator = () => {
   return (
     <View>
-      <Text>explore</Text>
+      <Text>AuthNavigator</Text>
     </View>
   )
 }
 
-export default Explore
+export default AuthNavigator
