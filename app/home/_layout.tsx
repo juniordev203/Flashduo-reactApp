@@ -1,29 +1,26 @@
 import { Tabs } from "expo-router";
 import { Image, ImageSourcePropType, Text, View } from "react-native";
-
 import icons from "@/constants/icons";
+import { Home, MessageSquare, User } from "lucide-react-native";
 
 const TabIcon = ({
   focused,
-  icon,
+  Icon,
   title,
 }: {
   focused: boolean;
-  icon: ImageSourcePropType;
+  Icon: any;
   title: string;
 }) => (
   <View className="flex-1 mt-3 flex flex-col items-center">
-    <Image
-      source={icon}
-      tintColor={focused ? "#0061FF" : "#666876"}
-      resizeMode="contain"
-      className="size-6"
+    <Icon
+    size={24} color={focused ? "#0061FF" : "#B1B1B1"}
     />
     <Text
       className={`${
         focused
-          ? "text-primary-300 font-rubik-medium"
-          : "text-black-200 font-rubik"
+          ? "text-blue-600 font-bold text-xs"
+          : "text-gray-600"
       } text-xs w-full text-center mt-1`}
     >
       {title}
@@ -51,7 +48,7 @@ const TabsLayout = () => {
           title: "Home",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.home} title="Home" />
+            <TabIcon focused={focused} Icon={Home} title="Trang chủ" />
           ),
         }}
       />
@@ -61,7 +58,7 @@ const TabsLayout = () => {
           title: "Forum",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.home} title="Forum" />
+            <TabIcon focused={focused} Icon={MessageSquare} title="Diễn đàn" />
           ),
         }}
       />
@@ -71,7 +68,7 @@ const TabsLayout = () => {
           title: "Profile",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.person} title="Profile" />
+            <TabIcon focused={focused} Icon={User} title="Tài khoản" />
           ),
         }}
       />
