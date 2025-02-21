@@ -3,9 +3,18 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import images from '@/constants/images'
 import icons from '@/constants/icons'
+import { router } from 'expo-router'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const SignIn = () => {
-  const handleLogin = () => { };
+  const handleLogin = async () => {
+    try {
+      await AsyncStorage.setItem('isLoggedIn', 'true'); // Lưu trạng thái đăng nhập
+      router.replace('/home/homePage'); // Chuyển hướng đến Home
+    } catch (error) {
+      console.error("Lỗi khi đăng nhập:", error);
+    }
+  };
   return (
     <SafeAreaView className='bg-white h-full'>
       <ScrollView contentContainerClassName='h-full'>
