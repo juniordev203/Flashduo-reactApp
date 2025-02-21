@@ -4,6 +4,7 @@ import { router } from 'expo-router';
 import SignIn from './sign-in';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import HomeScreen from './home/homePage';
+import RegisterScreen from './screens/RegisterScreen';
 
 const Index = () => {
     // const [loading, setLoading] = React.useState(true);
@@ -34,7 +35,7 @@ const Index = () => {
     //   }
     return (
         <SafeAreaView className="h-full bg-white">
-            <SignIn />
+            <RegisterScreen />
         </SafeAreaView>
       );
 }
